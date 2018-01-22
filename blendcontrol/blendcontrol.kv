@@ -1,0 +1,304 @@
+#:kivy 1.10.0
+
+<Menu>:
+    BoxLayout:
+        orientation: 'vertical'
+        canvas:
+            Color:
+                rgba: 0.2, 0.2, 0.2, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            text: "Send Json"
+            bold: True
+            size_hint_y: 0.3
+            font_size: "48dp"
+            color: (0, 1, 0, 1)
+        Label:
+            text: """Envoyez et recevez\n        des datas en json"""
+            size_hint_y: 0.2
+            font_size: "18dp"
+            color: (0, 1, 0, 1)
+        BoxLayout:
+            size_hint_y: 0.06
+            orientation: 'horizontal'
+            Button:
+                background_color: (0.8, 0.8, 0, 1)
+                text: 'Ecran 1'
+                color: (0, 1, 0, 1)
+                font_size: "22dp"
+                on_release: root.manager.current = ("Ecran 1")
+            Button:
+                background_color: (0.8, 0.8, 0, 1)
+                text: 'Ecran 2'
+                color: (0, 1, 0, 1)
+                font_size: "22dp"
+                on_release: root.manager.current = ("Ecran 2")
+            Button:
+                background_color: (0.8, 0.8, 0, 1)
+                text: 'Ecran 3'
+                color: (0, 1, 0, 1)
+                font_size: "22dp"
+                on_release: root.manager.current = ("Ecran 3")
+
+        BoxLayout:
+            size_hint_y: 0.04
+            orientation: 'horizontal'
+            Button:
+                background_color: (0.8, 0.8, 0, 1)
+                text: 'Options'
+                color: (0, 1, 0, 1)
+                font_size: "22dp"
+                on_release: app.open_settings()
+            Button:
+                background_color: (0.8, 0.8, 0, 1)
+                text: 'Quitter'
+                color: (0, 1, 0, 1)
+                font_size: "22dp"
+                on_release: app.do_quit()
+
+<Screen1>:
+    BoxLayout:
+        orientation: "vertical"
+        canvas:
+            Color:
+                rgba: 0.5, 0.5, 0.5, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Label:
+            size_hint_y: 0.50
+            font_size: "36dp"
+            text: "Position xy"
+            color: (0, 1, 0, 1)
+        BoxLayout:
+            size_hint_y: 0.05
+            canvas:
+                Color:
+                    rgba: 0.2, 0.2, 0.2, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Label:
+                size_hint_x: 0.8
+                text: "Info:  {}".format(root.info)
+                font_size: "16dp"
+            Button:
+                size_hint_x: 0.2
+                text: 'Menu'
+                color: (0, 1, 0, 1)
+                background_color: (0.8, 0.8, 0, 1)
+                font_size: "24dp"
+                on_release: app.go_mainscreen()
+
+<Screen2>:
+    BoxLayout:
+        orientation: "vertical"
+        canvas:
+            Color:
+                rgba: 0.5, 0.5, 0.5, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: 0.90
+            BoxLayout:
+                size_hint_y: 0.93
+                BoxLayout:
+                    spacing: 20
+                    padding: 20
+                    orientation: "vertical"
+                    size_hint_x: 0.75
+                    Slider:
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/2/s1", *args)
+                    Slider:
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/2/s2", *args)
+                    Slider:
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/2/s3", *args)
+                    Slider:
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/2/s4", *args)
+                    Slider:
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/2/s5", *args)
+                    Slider:
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/2/s6", *args)
+                BoxLayout:
+                    spacing: 10
+                    padding: 10
+                    size_hint_x: 0.25
+                    Slider:
+                        orientation: "vertical"
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/2/s7", *args)
+                    Slider:
+                        orientation: "vertical"
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/2/s8", *args)
+            BoxLayout:
+                spacing: 10
+                padding: 10
+                size_hint_y: 0.10
+                Button:
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    on_press: root.do_button_on("/2/b1", *args)
+                    on_release: root.do_button_off("/2/b1", *args)
+                Button:
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    on_press: root.do_button_on("/2/b2", *args)
+                    on_release: root.do_button_off("/2/b2", *args)
+                Button:
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    on_press: root.do_button_on("/2/b3", *args)
+                    on_release: root.do_button_off("/2/b3", *args)
+                Button:
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    on_press: root.do_button_on("/2/b4", *args)
+                    on_release: root.do_button_off("/2/b4", *args)
+                Button:
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    on_press: root.do_button_on("/2/b5", *args)
+                    on_release: root.do_button_off("/2/b5", *args)
+                Button:
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    on_press: root.do_button_on("/2/b6", *args)
+                    on_release: root.do_button_off("/2/b6", *args)
+                Button:
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    on_press: root.do_button_on("/2/b7", *args)
+                    on_release: root.do_button_off("/2/b7", *args)
+                Button:
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    on_press: root.do_button_on("/2/b8", *args)
+                    on_release: root.do_button_off("/2/b8", *args)
+        BoxLayout:
+            size_hint_y: 0.02
+        BoxLayout:
+            size_hint_y: 0.05
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgba: 0.2, 0.2, 0.2, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Label:
+                    size_hint_x: 0.8
+                    text: "Info: {}".format(root.info)
+                    font_size: "16dp"
+                Button:
+                    size_hint_x: 0.2
+                    text: 'Menu'
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    font_size: "24dp"
+                    on_release: app.go_mainscreen()
+
+<Screen3>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+        canvas:
+            Color:
+                rgba: 0.5, 0.5, 0.5, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_y: 0.90
+            BoxLayout:
+                size_hint_y: 0.93
+                Button:
+                    id: button_size
+                    color: (0, 1, 0, 1)
+                    background_color: (0, 0.8, 0, 1)
+                    font_size: "24dp"
+                    text: "Position xy"
+                BoxLayout:
+                    orientation: "vertical"
+                    spacing: 10
+                    padding: 10
+                    Slider:
+                        id: trois_un
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/3/s1", *args)
+                    Slider:
+                        id: trois_deux
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/3/s2", *args)
+                    Slider:
+                        id: trois_trois
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/3/s3", *args)
+                    Slider:
+                        id: trois_quatre
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/3/s4", *args)
+                    Slider:
+                        id: trois_cinq
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/3/s5", *args)
+                    Slider:
+                        id: trois_six
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/3/s6", *args)
+                    Slider:
+                        id: trois_sept
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/3/s7", *args)
+                    Slider:
+                        id: trois_huit
+                        range: 0, 1
+                        value: 0
+                        on_value: root.do_slider("/3/s8", *args)
+        BoxLayout:
+            size_hint_y: 0.05
+            BoxLayout:
+                canvas:
+                    Color:
+                        rgba: 0.2, 0.2, 0.2, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Label:
+                    size_hint_x: 0.8
+                    text: "Info: {}".format(root.info)
+                    font_size: "16dp"
+                Button:
+                    size_hint_x: 0.2
+                    text: 'Menu'
+                    color: (0, 1, 0, 1)
+                    background_color: (0.8, 0.8, 0, 1)
+                    font_size: "24dp"
+                    on_release: app.go_mainscreen()

@@ -1,0 +1,6 @@
+#!/bin/bash
+# -*- coding: UTF-8 -*-
+
+cd blendcontrol
+
+python3 main.py

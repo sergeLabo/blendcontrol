@@ -1,0 +1,6 @@
+#!/bin/bash
+# -*- coding: UTF-8 -*-
+
+cd server_test
+
+python3 server_test.py
