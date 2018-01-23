@@ -114,6 +114,10 @@
                     Slider:
                         range: 0, 1
                         value: 0
+                        on_value: root.do_slider("/2/s0", *args)
+                    Slider:
+                        range: 0, 1
+                        value: 0
                         on_value: root.do_slider("/2/s1", *args)
                     Slider:
                         range: 0, 1
@@ -131,10 +135,6 @@
                         range: 0, 1
                         value: 0
                         on_value: root.do_slider("/2/s5", *args)
-                    Slider:
-                        range: 0, 1
-                        value: 0
-                        on_value: root.do_slider("/2/s6", *args)
                 BoxLayout:
                     spacing: 10
                     padding: 10
@@ -143,56 +143,48 @@
                         orientation: "vertical"
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/2/s7", *args)
+                        on_value: root.do_slider("/2/s6", *args)
                     Slider:
                         orientation: "vertical"
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/2/s8", *args)
+                        on_value: root.do_slider("/2/s7", *args)
             BoxLayout:
                 spacing: 10
                 padding: 10
                 size_hint_y: 0.10
-                Button:
+                ToggleButton:
                     color: (0, 1, 0, 1)
                     background_color: (0.8, 0.8, 0, 1)
-                    on_press: root.do_button_on("/2/b1", *args)
-                    on_release: root.do_button_off("/2/b1", *args)
-                Button:
+                    on_state: root.on_state("/2/b0", self.state)
+                ToggleButton:
                     color: (0, 1, 0, 1)
                     background_color: (0.8, 0.8, 0, 1)
-                    on_press: root.do_button_on("/2/b2", *args)
-                    on_release: root.do_button_off("/2/b2", *args)
-                Button:
+                    on_state: root.on_state("/2/b1", self.state)
+                ToggleButton:
                     color: (0, 1, 0, 1)
                     background_color: (0.8, 0.8, 0, 1)
-                    on_press: root.do_button_on("/2/b3", *args)
-                    on_release: root.do_button_off("/2/b3", *args)
-                Button:
+                    on_state: root.on_state("/2/b2", self.state)
+                ToggleButton:
                     color: (0, 1, 0, 1)
                     background_color: (0.8, 0.8, 0, 1)
-                    on_press: root.do_button_on("/2/b4", *args)
-                    on_release: root.do_button_off("/2/b4", *args)
-                Button:
+                    on_state: root.on_state("/2/b3", self.state)
+                ToggleButton:
                     color: (0, 1, 0, 1)
                     background_color: (0.8, 0.8, 0, 1)
-                    on_press: root.do_button_on("/2/b5", *args)
-                    on_release: root.do_button_off("/2/b5", *args)
-                Button:
+                    on_state: root.on_state("/2/b4", self.state)
+                ToggleButton:
                     color: (0, 1, 0, 1)
                     background_color: (0.8, 0.8, 0, 1)
-                    on_press: root.do_button_on("/2/b6", *args)
-                    on_release: root.do_button_off("/2/b6", *args)
-                Button:
+                    on_state: root.on_state("/2/b5", self.state)
+                ToggleButton:
                     color: (0, 1, 0, 1)
                     background_color: (0.8, 0.8, 0, 1)
-                    on_press: root.do_button_on("/2/b7", *args)
-                    on_release: root.do_button_off("/2/b7", *args)
-                Button:
+                    on_state: root.on_state("/2/b6", self.state)
+                ToggleButton:
                     color: (0, 1, 0, 1)
                     background_color: (0.8, 0.8, 0, 1)
-                    on_press: root.do_button_on("/2/b8", *args)
-                    on_release: root.do_button_off("/2/b8", *args)
+                    on_state: root.on_state("/2/b7", self.state)
         BoxLayout:
             size_hint_y: 0.02
         BoxLayout:
@@ -246,42 +238,42 @@
                         id: trois_un
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/3/s1", *args)
+                        on_value: root.do_slider("/3/s0", *args)
                     Slider:
                         id: trois_deux
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/3/s2", *args)
+                        on_value: root.do_slider("/3/s1", *args)
                     Slider:
                         id: trois_trois
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/3/s3", *args)
+                        on_value: root.do_slider("/3/s2", *args)
                     Slider:
                         id: trois_quatre
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/3/s4", *args)
+                        on_value: root.do_slider("/3/s3", *args)
                     Slider:
                         id: trois_cinq
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/3/s5", *args)
+                        on_value: root.do_slider("/3/s4", *args)
                     Slider:
                         id: trois_six
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/3/s6", *args)
+                        on_value: root.do_slider("/3/s5", *args)
                     Slider:
                         id: trois_sept
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/3/s7", *args)
+                        on_value: root.do_slider("/3/s6", *args)
                     Slider:
                         id: trois_huit
                         range: 0, 1
                         value: 0
-                        on_value: root.do_slider("/3/s8", *args)
+                        on_value: root.do_slider("/3/s7", *args)
         BoxLayout:
             size_hint_y: 0.05
             BoxLayout:

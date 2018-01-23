@@ -23,11 +23,12 @@
 # #####################################################################
 
 
-__version__ = '0.01'
+__version__ = '0.02'
 
 
 """
 version
+0.02 pour présentation
 0.01 blendcontrol
 """
 
@@ -443,20 +444,15 @@ class Screen2(Screen):
 
         self.info = str(stuff)
 
-    def do_button_on(self, iD, instance):
-        """Appelé si button = 1"""
+    def on_state(self, iD, state):
 
-        print("Button {} on".format(iD))
-
-        self.tcp_msg = {"screen 2": {"button": {iD: 0}}}
-
-    def do_button_off(self, iD, instance):
-        """Appelé si button = 0"""
-
-        print("Button {} off".format(iD))
-
-        self.tcp_msg = {"screen 2": {"button": {iD: 1}}}
-
+        print("Button {} {}".format(iD, state))
+        
+        if state == "down":
+            self.tcp_msg = {"screen 2": {"button": {iD: 1}}}
+        else:
+            self.tcp_msg = {"screen 2": {"button": {iD: 0}}}
+        
     def do_slider(self, iD, instance, value):
         """Appelé si slider change."""
 

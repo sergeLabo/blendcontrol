@@ -3,12 +3,12 @@
 ## Comme TapOSC, mais les datas sont converties en Json
 
 
-##### [Blend Control sur le wiki de La Labomedia]()
+##### [Blend Control sur le wiki de La Labomedia](https://wiki.labomedia.org/index.php/Blend_Control)
 
 ### Licence
 
 ~~~text
-Copyright (C) Labomedia November 2017
+Copyright (C) Labomedia January 2018
 
 Blend Control is licensed under the
     Creative Commons Attribution-ShareAlike 3.0 Unported License.
@@ -41,8 +41,7 @@ Voir  [mylabotools](https://github.com/sergeLabo/mylabotools)
 #### Lancement du serveur
 Un script sh lance un script python
 
-Cliquer sur:
-
+Clic sur:
 * run_server_test
 
 ### Tester sur un PC
@@ -51,12 +50,9 @@ Cliquer sur:
 
 * [Installation de Kivy](https://wiki.labomedia.org/index.php/2_Kivy:_Installation)
 
-#### Lancement
-Dans blendcontrol
+Clic sur:
+* run_blendcontrol
 
-~~~text
-python3 main.py
-~~~
 
 ### Installation sur android
 Récupérer le apk sur votre téléphone, l'installer après avoir autorisé les sources inconnues puisque la source est connue !!
